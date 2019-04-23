@@ -133,7 +133,7 @@ sudo ln -s /etc/nginx/sites-available/iblack.sexy /etc/nginx/sites-enabled/iblac
 
 Remove the default site symlink:
 ```shell
-sudo rm sites-enabled/default
+sudo rm /etc/nginx/sites-enabled/default
 ```
 
 Restart nginx to enable the new config:
