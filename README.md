@@ -171,3 +171,7 @@ Enter the following config:
 ```
 
 Logs are now rotated monthly, and stored at `/var/log/nginx/`.
+To get some interesting stats you can try the following regex's:
+```
+
+```
