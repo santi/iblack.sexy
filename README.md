@@ -173,5 +173,6 @@ Enter the following config:
 Logs are now rotated monthly, and stored at `/var/log/nginx/`.
 To get some interesting stats you can try the following regex's:
 ```
-
+sudo cat /var/log/nginx/access.log | grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}.*01\/Apr' | uniq | wc -l
+sudo cat /var/log/nginx/access.log | grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}.*[0-9]\{2\}\/May' | uniq | wc -l
 ```
