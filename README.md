@@ -141,6 +141,21 @@ Restart nginx to enable the new config:
 sudo systemctl restart nginx
 ```
 
+## Adding Host to nginx access log
+
+If more than one domain is hosted on the same server, it is beneficial to be able to distinguish between the requests in the access log. In order to add host to the logs, add the following config in the `html` block in the nginx config at `/etc/nginx/nginx.conf`:
+```shell
+log_format with_host '$remote_addr - $remote_user [$time_local] "$host" '
+                           '"$request" $status $body_bytes_sent '
+                           '"$http_referer" "$http_user_agent"';
+```
+
+Then modify the default logging settings by specifying the new log format:
+```shell
+access_log /var/log/nginx/access.log with_host;
+error_log /var/log/nginx/error.log with_host;
+```
+
 ## Configure logging with logrotate
 
 Edit the nginx logrotate config file:
