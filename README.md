@@ -150,10 +150,9 @@ log_format with_host '$remote_addr - $remote_user [$time_local] "$host" '
                            '"$http_referer" "$http_user_agent"';
 ```
 
-Then modify the default logging settings by specifying the new log format:
+Then modify the default access log settings by specifying the new log format:
 ```shell
 access_log /var/log/nginx/access.log with_host;
-error_log /var/log/nginx/error.log with_host;
 ```
 
 ## Configure logging with logrotate
